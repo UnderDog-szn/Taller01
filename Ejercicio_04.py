@@ -30,14 +30,15 @@ def main():
                 factorial *= i
             print(f"El factorial de {numero} es {factorial}")
         elif opcion == 3:
+            conteo = {"a": 0, "e": 0, "i": 0, "o": 0, "u": 0}
             cadena = input("Ingrese una cadena de texto: ")
-            vocales = "aeiouAEIOU"
-            contador_vocales = 0
             for letra in cadena:
-                if letra in vocales:
-                    contador_vocales += 1
-            print(f"La cantidad de vocales en la cadena es: {contador_vocales}")
+                if letra.lower() in conteo:
+                    conteo[letra.lower()] +=1
+            for vocal, cantidad in conteo.items():
+                print(f"{vocal}: {cantidad}")
         elif opcion == 4:
+            print("Saliendo del programa...")
             flag = False
         else:    
             print("Opcion no valida")
